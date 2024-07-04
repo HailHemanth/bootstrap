@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regestration Form</title>
+</head>
+
+<body>
+<form  name="form">
+<label for="">Username</label>
+<input type="text" name="" id="name">
+password
+<input type="password" name="" id="pass">
+confirm password
+<input type="password" name="" id="confpass">
+<button type="submit" onclick="return validateForm()">submit</button>
+email
+<input type="email" name="email" id="email">
+phone
+<input type="text" name="phone" id="phone" maxlength="10">
+<button type="submit" onclick="return validate(event)">submit</button>
+</form> 
+<p id="sucess" ></p>
+<script>
+function validateForm(){
+    event.preventDefault();
+let name=document.getElementById('name').value;
+let pass=document.getElementById('pass').value;
+let confpass=document.getElementById('confpass').value;
+let email = document.getElementById('email').value;
+let phone= document.getElementById('phone').value;
+const phone1=document.getElementById('phone').maxlenth;
+const phone2= phone1-phone.lenghth;
+       console.log(pass,confpass)
+if(name==''){
+alert("name is empty");
+return false;
+}
+else if( pass!==confpass){
+    alert("password does not match");
+    return false;
+    
+}
+else if(email==''){
+    alert("email is empty")
+} 
+else if(phone.lenghth !=10){
+    alert("phone number is less than" +phone2)
+}
+
+else{
+    document.getElementById('sucess').innerHTML="sucess";
+    return true;
+}
+}
+
+</script>
+
+
+
+
+   
+</body>
+
+</html>
